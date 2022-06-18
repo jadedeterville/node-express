@@ -41,7 +41,7 @@ campsiteRouter.route('/:campsiteId')
 })
 .post((req, res) => {
     res.statusCode = 403;
-    res.end('PUT operation not supported on /campsites');
+    res.end('POST operation not supported on /campsites');
 })
 .put((req, res) => {
     res.end(`Will add the campsite ID: ${req.body.name} with description: ${req.body.description}`);
