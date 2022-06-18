@@ -40,14 +40,14 @@ campsiteRouter.route('/:campsiteId')
     res.end('Will send all the campsites IDs to you');
 })
 .post((req, res) => {
-    res.end(`Will add the campsite ID: ${req.body.name} with description: ${req.body.description}`);
-})
-.put((req, res) => {
     res.statusCode = 403;
     res.end('PUT operation not supported on /campsites');
 })
+.put((req, res) => {
+    res.end(`Will add the campsite ID: ${req.body.name} with description: ${req.body.description}`);
+})
 .delete((req, res) => {
-    res.end('Deleting all campsites');
+    res.end('Deleting all campsites IDs');
 });
 
 
