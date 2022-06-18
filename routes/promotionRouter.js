@@ -28,18 +28,17 @@ promotionRouter.route('/:promotionId')
   next();
 })
 .get((req, res) => {
-  res.end('Will send all the promotions IDs to you');
+  res.end(`Will send the promotion ID ${req.params.promotionId} to you`);
 })
 .post((req, res) => {
   res.statusCode = 403;
   res.end('POST operation not supported on /promotions');
 })
 .put((req, res) => {
-  res.statusCode = 200;
   res.end(`Will update the promotion: ${req.body.name} with description: ${req.body.description}`);
 })
 .delete((req, res) => {
-  res.end('Deleting all promotions IDs');
+  res.end(`Deleting the promotion ID ${req.params.promotionId}`);
 });
 
 module.exports = promotionRouter;

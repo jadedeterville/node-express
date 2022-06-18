@@ -28,18 +28,17 @@ partnerRouter.route('/:partnerId')
   next();
 })
 .get((req, res) => {
-  res.end('Will send all the partners IDs to you');
+  res.end(`Will send the partner ID ${req.params.partnerId} to you`);
 })
 .post((req, res) => {
   res.statusCode = 403;
   res.end('POST operation not supported on /partners');
 })
 .put((req, res) => {
-  res.statusCode = 200;
   res.end(`Will update the partner: ${req.body.name} with description: ${req.body.description}`);
 })
 .delete((req, res) => {
-  res.end('Deleting all partners IDs');
+  res.end(`Deleting the partner ID ${req.params.partnerId}`);
 });
 
 module.exports = partnerRouter;

@@ -39,7 +39,7 @@ campsiteRouter.route('/:campsiteId')
     next();
 })
 .get((req, res) => {
-    res.end('Will send all the campsites IDs to you');
+    res.end(`Will send the campsite ID ${req.params.campsiteId} to you`);
 })
 // looking at a specific campsite so we can update it but we cant add one 
 .post((req, res) => {
@@ -50,11 +50,12 @@ campsiteRouter.route('/:campsiteId')
     res.end(`Will add the campsite ID: ${req.body.name} with description: ${req.body.description}`);
 })
 .delete((req, res) => {
-    res.end('Deleting all campsites IDs');
+    res.end(`Deleting the campsite ID ${req.params.campsiteId}`);
 });
 
 
 module.exports = campsiteRouter;
+
 
 
 
