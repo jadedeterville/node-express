@@ -16,11 +16,13 @@ campsiteRouter.route('/')
 .get((req, res) => {
     res.end('Will send all the campsites to you');
 })
-// posts carries info typically in json 
+// posts carries info typically in json
+// post is just adding a new campsite to the path  
 .post((req, res) => {
     res.end(`Will add the campsite: ${req.body.name} with description: ${req.body.description}`);
 })
 // 403 operation not supported 
+// we arent updating all campsites and dont know which specific one 
 .put((req, res) => {
     res.statusCode = 403;
     res.end('PUT operation not supported on /campsites');
@@ -39,6 +41,7 @@ campsiteRouter.route('/:campsiteId')
 .get((req, res) => {
     res.end('Will send all the campsites IDs to you');
 })
+// looking at a specific campsite so we can update it but we cant add one 
 .post((req, res) => {
     res.statusCode = 403;
     res.end('POST operation not supported on /campsites');
